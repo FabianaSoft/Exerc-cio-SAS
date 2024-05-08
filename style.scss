@@ -1,3 +1,15 @@
+@mixin resultado {
+    background-color: #897a5f;
+}
+
+@mixin encontrado {
+    background-color: #1aae9f;
+}
+
+@mixin nao-encontrado {
+    background-color: #d3455b;
+}
+
 body {
     background-color: #8dd7cf;
     display: flex;
@@ -5,8 +17,6 @@ body {
     align-items: center;
     gap: 20px;
 }
-
-
 
 .card {
     display: flex;
@@ -18,8 +28,8 @@ body {
     padding: 10px;
     gap: 10px;
 
-    button{
-        width: 80%;
+    button {
+        width: 85%;
         padding: 5px;
         border: none;
         background-color: #788895;
@@ -35,5 +45,22 @@ body {
 
     }
 
+    p {
+        @include resultado;
+        width: 80%;
+        padding: 5px;
+        color: #fff;
+        border-radius: 5px;
+        margin: 0;
+    }
 
+    .encontrado{
+        @include encontrado;
+
+    }
+
+    .nao-encontrado{
+        @include nao-encontrado;
+    }
 }
+
