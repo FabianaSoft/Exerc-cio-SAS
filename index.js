@@ -8,18 +8,15 @@ function find() {
     let lista = input.split(",");
     let elemento = document.getElementById("elemento-find").value;
     let resultado = lista.find((item) => item === elemento);
-    console.log(resultado);
-
+    let p = document.getElementById("resultado-find")
+    p.innerHTML = resultado ? "Encontrado!" : "Não Encontrado!"
 }
 
-function filter (){
+function filter() {
     let input = document.getElementById("lista-filter").value;
     let lista = input.split(",");
-    console.log(lista);
     let elemento = document.getElementById("elemento-filter").value;
-    let resultado = lista.filter((item) => item === elemento);
-    console.log(resultado);
-
-
-
+    let resultado = lista.filter((item) => item.replaceAll(" ", "") === elemento);
+    let p = document.getElementById("resultado-filter")
+    p.innerHTML = resultado.length + " Encontrados!"
 }
