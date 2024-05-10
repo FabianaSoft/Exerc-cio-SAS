@@ -10,6 +10,31 @@
     background-color: #d3455b;
 }
 
+@mixin button {
+    width: 85%;
+    padding: 5px;
+    border: none;
+    background-color: #788895;
+    color: #fff;
+    border-radius: 5px;
+}
+
+@mixin input {
+    width: 80%;
+    padding: 5px;
+    border: 2px solid #c3cfd9;
+    border-radius: 5px;
+}
+
+@mixin p {
+    @include resultado;
+    width: 80%;
+    padding: 5px;
+    color: #fff;
+    border-radius: 5px;
+    margin: 0;
+}
+
 body {
     background-color: #8dd7cf;
     display: flex;
