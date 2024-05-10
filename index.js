@@ -9,7 +9,16 @@ function find() {
     let elemento = document.getElementById("elemento-find").value;
     let resultado = lista.find((item) => item === elemento);
     let p = document.getElementById("resultado-find")
-    p.innerHTML = resultado ? "Encontrado!" : "Não Encontrado!"
+    if (resultado) {
+        p.innerHTML = "Encontrado!"
+        p.classList.remove("nao-encontrado", "encontrado")
+        p.classList.add("encontrado")
+    }
+    else {
+        p.innerHTML = "Não encontrado!"
+        p.classList.remove("nao-encontrado", "encontrado")
+        p.classList.add("nao-encontrado")
+    }
 }
 
 function filter() {
@@ -19,4 +28,12 @@ function filter() {
     let resultado = lista.filter((item) => item.replaceAll(" ", "") === elemento);
     let p = document.getElementById("resultado-filter")
     p.innerHTML = resultado.length + " Encontrados!"
+    if (resultado.length > 0) {
+        p.classList.remove("nao-encontrado", "encontrado")
+        p.classList.add("encontrado")
+    }
+    else {
+        p.classList.remove("nao-encontrado", "encontrado")
+        p.classList.add("nao-encontrado")
+    }
 }
